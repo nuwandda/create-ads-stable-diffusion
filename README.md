@@ -71,6 +71,8 @@ In summary, Uvicorn is a versatile and performant ASGI server that excels in han
 
 For this project, Uvicorn is using 3 workers. This means there will 3 subprocesses and the users can send requests in parallel. With this feature, the server can accept more than one request at the same time. You can increase the worker number regarding to your VRAM.
 
+<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
+
 <!-- GETTING STARTED -->
 ## Getting Started - Python
 Instructions on setting up your project locally.
@@ -122,3 +124,5 @@ To run the Streamlit, in a terminal, type:
   streamlit run main.py
   ```
 Then, visit the provided URL in your browser to interact with the app.
+
+<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
