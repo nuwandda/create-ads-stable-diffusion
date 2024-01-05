@@ -38,7 +38,7 @@ def create_pipeline(model_path):
     return pipe
 
 
-pipe = create_pipeline('weights/realisticVisionV60B1_v20Novae.safetensors')
+pipe = create_pipeline(MODEL_PATH)
 
 
 async def generate_image(imgPrompt: _schemas.ImageCreate) -> Image:
