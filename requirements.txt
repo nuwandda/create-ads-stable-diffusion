@@ -10,3 +10,4 @@ ruff
 black
 ipykernel
 streamlit
+webcolors
