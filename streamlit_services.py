@@ -16,11 +16,16 @@ NEGATIVE_PROMPT = 'noisy, blurry, amateurish, sloppy, unattractive'
 
 def create_pipeline(model_path):
     # Create the pipe 
-    pipe = StableDiffusionImg2ImgPipeline.from_single_file(
-        model_path, 
-        revision="fp16", 
-        torch_dtype=torch.float16
-    )
+    pipe = None
+    if torch.cuda.is_available():
+        # Create the pipe 
+        pipe = StableDiffusionImg2ImgPipeline.from_single_file(
+            model_path, 
+            revision="fp16", 
+            torch_dtype=torch.float16
+        )
+    else:
+        pipe = StableDiffusionImg2ImgPipeline.from_single_file(model_path)
     
     # pipe = DiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=torch.float16, use_safetensors=True, variant="fp16")
 
