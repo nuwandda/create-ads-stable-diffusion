@@ -1,0 +1,11 @@
+fastapi[all]
+diffusers
+omegaconf
+transformers
+scipy
+ftfy
+accelerate
+mypy 
+ruff
+black
+ipykernel
