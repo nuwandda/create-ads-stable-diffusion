@@ -1,2 +1,2 @@
-# create-ads-stable-diffusion
+# Create Ads Stable Diffusion
 Create ads using Stable Diffusion
