@@ -42,7 +42,7 @@ async def generate_image(addElements: _schemas.AddElements = _fapi.Depends()):
     return StreamingResponse(memory_stream, media_type="image/png")
 
 
-@app.post("/api/create_add")
+@app.post("/api/create_ad")
 async def generate_image(adCreate: _schemas.CreateAd = _fapi.Depends()):
     
     image = await _services.create_ad(adPrompt=adCreate)
