@@ -11,3 +11,4 @@ black
 ipykernel
 streamlit
 webcolors
+Pillow==9.5.0
