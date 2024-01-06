@@ -10,7 +10,7 @@ To see the online Streamlit demo, please visit this <a href="https://huggingface
 
 To see the online API demo, please visit this <a href="https://nuwandaa-adcreative-demo-api.hf.space/docs">link</a>. This space is also using CPU. So, it is a little bit slow.
 
-You can also use the provided link to run the server on Colab. You can use GPU runtime in order to speed up the inference.
+Use the provided link to run the server on Colab. You can use GPU runtime in order to speed up the inference.
 <a href="https://colab.research.google.com/github.com/nuwandda/create-ads-stable-diffusion/blob/main/Run_API_in_Colab.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
 
 ![sample_image](sample_images/output_image.png "Created Ad")
