@@ -23,8 +23,10 @@ def main():
         if encoded_base_img is not None and logo is not None:
             init_image = Image.open(encoded_base_img)
             logo_image = Image.open(logo)
-            result = streamlit_services.create_ad(init_image, logo_image, hex_color, prompt, punchline_text, punchline_color, button_text, button_color)
+            result = streamlit_services.create_ad(init_image, logo_image, hex_color, prompt, punchline_text,
+                                                  punchline_color, button_text, button_color)
             st.image(result, caption="Generated Ad", use_column_width=True)
+
 
 if __name__ == "__main__":
     main()

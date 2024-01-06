@@ -11,6 +11,8 @@ import utils
 
 load_dotenv()
 MODEL_PATH = os.getenv('MODEL_PATH')
+if MODEL_PATH is None:
+    MODEL_PATH = 'weights/realisticVisionV60B1_v20Novae.safetensors'
 SEED = -1
 NUM_INFERENCE_STEPS = 50
 GUIDANCE_SCALE = 15
@@ -20,11 +22,16 @@ NEGATIVE_PROMPT = 'noisy, blurry, amateurish, sloppy, unattractive'
 
 def create_pipeline(model_path):
     # Create the pipe 
-    pipe = StableDiffusionImg2ImgPipeline.from_single_file(
-        model_path, 
-        revision="fp16", 
-        torch_dtype=torch.float16
-    )
+    pipe = None
+    if torch.cuda.is_available():
+        # Create the pipe 
+        pipe = StableDiffusionImg2ImgPipeline.from_single_file(
+            model_path, 
+            revision="fp16", 
+            torch_dtype=torch.float16
+        )
+    else:
+        pipe = StableDiffusionImg2ImgPipeline.from_single_file(model_path)
     
     # pipe = DiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0", torch_dtype=torch.float16, use_safetensors=True, variant="fp16")
 
@@ -49,7 +56,8 @@ async def generate_image(imgPrompt: _schemas.ImageCreate) -> Image:
     requested_color = utils.hex_to_rgb(imgPrompt.hex_color)
     closest_color_name = utils.get_colour_name(requested_color)
     
-    final_prompt = 'Retail packaging style {} {}. Vibrant, enticing, commercial, product-focused, eye-catching, professional, highly detailed'.format(closest_color_name, imgPrompt.prompt)
+    final_prompt = ('Retail packaging style {} {}. Vibrant, enticing, commercial, product-focused, eye-catching, '
+                    'professional, highly detailed').format(closest_color_name, imgPrompt.prompt)
 
     image: Image = pipe(final_prompt,
                         image=init_image,
@@ -120,7 +128,8 @@ async def create_ad(adPrompt: _schemas.CreateAd) -> Image:
     requested_color = utils.hex_to_rgb(adPrompt.hex_color)
     closest_color_name = utils.get_colour_name(requested_color)
     
-    final_prompt = 'Retail packaging style {} {}. Vibrant, enticing, commercial, product-focused, eye-catching, professional, highly detailed'.format(closest_color_name, adPrompt.prompt)
+    final_prompt = ('Retail packaging style {} {}. Vibrant, enticing, commercial, product-focused, eye-catching, '
+                    'professional, highly detailed').format(closest_color_name, adPrompt.prompt)
 
     base_image: Image = pipe(final_prompt,
                         image=init_image,

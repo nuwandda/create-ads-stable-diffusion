@@ -4,7 +4,7 @@ import webcolors
 
 
 def set_seed():
-    seed = random.randint(42,4294967295)
+    seed = random.randint(42, 4294967295)
     return seed
 
 

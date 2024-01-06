@@ -48,7 +48,8 @@ def create_ad(init_image, logo_image, hex_color, prompt, punchline_text, punchli
     requested_color = utils.hex_to_rgb(hex_color)
     closest_color_name = utils.get_colour_name(requested_color)
     
-    final_prompt = 'Retail packaging style {} {}. Vibrant, enticing, commercial, product-focused, eye-catching, professional, highly detailed'.format(closest_color_name, prompt)
+    final_prompt = ('Retail packaging style {} {}. Vibrant, enticing, commercial, product-focused, eye-catching, '
+                    'professional, highly detailed').format(closest_color_name, prompt)
 
     base_image: Image = pipe(final_prompt,
                         image=init_image,
