@@ -6,7 +6,9 @@
 AI Text to image models have seen explosive growth the past year matched with an equally explosive growth of an assumption that AI generated images will replace graphic design and artist roles. In short the AI image creation goes from nothing to fully formed image with no effort, but specific inputs or requirements increase the difficulty immensely. AI image generation is the perfect tool for creating a never before seen magical world, but if your requirements are more specific than that, it can feel quite difficult to impart your intentions into the chaos of the random image generation. 
 The purpose of this project is creating a pipeline that creates advertisements with the given parameters.
 
-To see the online demo, please visit this <a href="https://huggingface.co/spaces/nuwandaa/adcreative-demo">Huggingface space</a>. This space is using CPU. So, it is a little bit slow.
+To see the online Streamlit demo, please visit this <a href="https://huggingface.co/spaces/nuwandaa/adcreative-demo">Huggingface space</a>. This space is using CPU. So, it is a little bit slow.
+
+To see the online API demo, please visit this <a href="https://nuwandaa-adcreative-demo-api.hf.space/docs">link</a>. This space is also using CPU. So, it is a little bit slow.
 
 ![sample_image](sample_images/output_image.png "Created Ad")
 
