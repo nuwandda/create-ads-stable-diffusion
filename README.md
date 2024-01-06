@@ -86,6 +86,12 @@ To install the required packages, in a terminal, type:
   pip install -r requirements.txt
   ```
 
+### Download model
+To download the model, in a terminal, type:
+  ```sh
+  wget https://civitai.com/api/download/models/245598 --directory-prefix weights --content-disposition
+  ```
+
 ### Run the project
 To run the project, in a terminal, type:
   ```sh
@@ -119,6 +125,13 @@ To install the required packages, in a terminal, type:
   ```sh
   pip install -r requirements.txt
   ```
+
+### Download model
+To download the model, in a terminal, type:
+  ```sh
+  wget https://civitai.com/api/download/models/245598 --directory-prefix weights --content-disposition
+  ```
+
 
 ### Run Streamlit
 To run the Streamlit, in a terminal, type:
