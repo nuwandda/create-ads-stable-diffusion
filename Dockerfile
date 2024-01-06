@@ -14,7 +14,7 @@ RUN apt-get install -y git
 RUN apt install python3-pip -y
 RUN apt-get install git-lfs
 ENV LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib/python3.8/dist-packages/nvidia/cudnn/lib"
-RUN wget https://civitai.com/api/download/models/245598 --directory-prefix weights --content-disposition
+RUN wget https://huggingface.co/spaces/nuwandaa/adcreative-demo-api/resolve/main/weights/realisticVisionV60B1_v20Novae.safetensors\?download\=true --directory-prefix weights --content-disposition
 
 COPY requirements.txt /usr/app/requirements.txt
 RUN pip install -r requirements.txt
