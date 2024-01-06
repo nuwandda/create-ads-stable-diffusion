@@ -18,7 +18,7 @@ RUN wget https://civitai.com/api/download/models/245598 --directory-prefix weigh
 
 COPY requirements.txt /usr/app/requirements.txt
 RUN pip install -r requirements.txt
-ENV MODEL_PATH="weights/realisticVisionV60B1_v60B1VAE.safetensors"
+ENV MODEL_PATH="weights/realisticVisionV60B1_v20Novae.safetensors"
 COPY . .
 
 CMD ["uvicorn", "app:app", "--proxy-headers", "--host", "0.0.0.0", "--port", "80", "--workers", "3"]

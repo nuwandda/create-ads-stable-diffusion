@@ -12,7 +12,7 @@ import utils
 load_dotenv()
 MODEL_PATH = os.getenv('MODEL_PATH')
 if MODEL_PATH is None:
-    MODEL_PATH = 'weights/realisticVisionV60B1_v60B1VAE.safetensors'
+    MODEL_PATH = 'weights/realisticVisionV60B1_v20Novae.safetensors'
 SEED = -1
 NUM_INFERENCE_STEPS = 50
 GUIDANCE_SCALE = 15
