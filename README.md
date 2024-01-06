@@ -94,7 +94,7 @@ To install the required packages, in a terminal, type:
 ### Download model
 To download the model, in a terminal, type:
   ```sh
-  wget https://civitai.com/api/download/models/245598 --directory-prefix weights --content-disposition
+  wget https://huggingface.co/spaces/nuwandaa/adcreative-demo-api/resolve/main/weights/realisticVisionV60B1_v20Novae.safetensors\?download\=true --directory-prefix weights --content-disposition
   ```
 
 ### Run the project
@@ -134,7 +134,7 @@ To install the required packages, in a terminal, type:
 ### Download model
 To download the model, in a terminal, type:
   ```sh
-  wget https://civitai.com/api/download/models/245598 --directory-prefix weights --content-disposition
+  wget https://huggingface.co/spaces/nuwandaa/adcreative-demo-api/resolve/main/weights/realisticVisionV60B1_v20Novae.safetensors\?download\=true --directory-prefix weights --content-disposition
   ```
 
 
