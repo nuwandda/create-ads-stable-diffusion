@@ -4,6 +4,7 @@ import os
 from dotenv import load_dotenv
 from PIL import Image
 import utils
+from pkg_resources import parse_version
 
 load_dotenv()
 MODEL_PATH = os.getenv('MODEL_PATH')
@@ -44,7 +45,10 @@ pipe = create_pipeline('weights/realisticVisionV60B1_v20Novae.safetensors')
 
 def create_ad(init_image, logo_image, hex_color, prompt, punchline_text, punchline_color, button_text, button_color,) -> Image:
     generator = torch.Generator().manual_seed(utils.set_seed()) if float(SEED) == -1 else torch.Generator().manual_seed(int(SEED))
-    init_image = init_image.resize((512, 512))
+    if parse_version(Image.__version__) >= parse_version('9.5.0'):
+        init_image = init_image.resize((512, 512), Image.LANCZOS)
+    else:
+        init_image = init_image.resize((512, 512), Image.ANTIALIAS)
     requested_color = utils.hex_to_rgb(hex_color)
     closest_color_name = utils.get_colour_name(requested_color)
     

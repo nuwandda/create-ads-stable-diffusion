@@ -1,6 +1,7 @@
 import random
 from PIL import Image, ImageDraw, ImageFont
 import webcolors
+from pkg_resources import parse_version
 
 
 def set_seed():
@@ -57,7 +58,10 @@ def resize_image_with_ratio(input_image, target_width):
     target_height = round(target_width / aspect_ratio)
 
     # Resize the image
-    resized_image = input_image.resize((target_width, target_height), Image.ANTIALIAS)
+    if parse_version(Image.__version__) >= parse_version('9.5.0'):
+        resized_image = input_image.resize((target_width, target_height), Image.LANCZOS)
+    else:
+        resized_image = input_image.resize((target_width, target_height), Image.ANTIALIAS)
 
     return resized_image
 
